@@ -27,7 +27,6 @@ public class MainModule {
 		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 		String Conurl = "jdbc:sqlserver://" + p.getProperty("ServerName") + "databaseName="+ p.getProperty("databaseName");
 		Connection con = DriverManager.getConnection(Conurl, p.getProperty("dbUsername"), p.getProperty("dbPassword"));
-		String x = "Hello";
 		Statement stmt = con.createStatement();
 		ResultSet rs;
 
