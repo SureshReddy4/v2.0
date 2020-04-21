@@ -19,6 +19,7 @@ public class MainModule {
 		FileInputStream fis = new FileInputStream("C:\\Users\\suresh.b\\git\\v2.0\\v2.0\\src\\main\\java\\Core\\9020.properties");
 		Properties p = new Properties();
 		p.load(fis);
+		
 		/*
 		 * Server Connection Creation
 		 * Conurl contains Server Name, Database Name
@@ -26,7 +27,7 @@ public class MainModule {
 		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 		String Conurl = "jdbc:sqlserver://" + p.getProperty("ServerName") + "databaseName="+ p.getProperty("databaseName");
 		Connection con = DriverManager.getConnection(Conurl, p.getProperty("dbUsername"), p.getProperty("dbPassword"));
-
+		String x = "Hello";
 		Statement stmt = con.createStatement();
 		ResultSet rs;
 
