@@ -143,15 +143,18 @@ public class Navigation_v2
 													{
 														sheet.getRow(j).createCell(2).setCellValue(submodule);
 
-														if(HP.left())
+														if(Module.equalsIgnoreCase("Dashboard"))
 														{
-															HP.SubModule_Link();
+															driver.findElement(By.linkText(submodule)).click();
+															wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("grd_loading_Image")));
 														}
 														else
 														{
 															HP.SubModuleClick(submodule);
 														}
-														System.out.println(submodule);
+															
+															System.out.println(submodule);
+															
 															try 
 																{	
 																	driver.switchTo().alert().dismiss();
@@ -271,7 +274,7 @@ public class Navigation_v2
 			stmt.execute(query2);
 			
 //			String query3 = "Select Title from #MainModule_List where Parent = 0 and URL is not null Drop Table #MainModule_List ";
-			String query3 = "Select Title from #MainModule_List Where URL IS NOT NULL and Parent = 0 and Title In ('Dashboard','Products') Drop Table #MainModule_List";
+			String query3 = "Select Title from #MainModule_List Where URL IS NOT NULL and Parent = 0 and Title In ('Dashboard','Sales') Drop Table #MainModule_List";
 			stmt.execute(query3);
 	
 			rs = stmt.getResultSet();

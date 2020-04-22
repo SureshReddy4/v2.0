@@ -61,7 +61,7 @@ public class I_HomePage
 	
 	public void SubModuleClick(String SubM) throws InterruptedException
 	{
-			try
+		try
 			{
 				WebDriverWait wait3 = new WebDriverWait(driver,30);
 				wait3.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='divleft']//ul//li//a//div//p[text()='"+SubM+"']/parent::div/parent::a")));
@@ -72,7 +72,8 @@ public class I_HomePage
 			{
 				JavascriptExecutor js = (JavascriptExecutor)driver;
 				js.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(By.xpath("//div[@id='divleft']//ul//li//a//div//p[text()='"+SubM+"']/parent::div/parent::a")));
-//				wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='divleft']//ul//li//a//div//p[text()='"+SubM+"']/parent::div/parent::a")));
+				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("grd_loading_Image")));
+				wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='divleft']//ul//li//a//div//p[text()='"+SubM+"']/parent::div/parent::a")));
 				driver.findElement(By.xpath("//div[@id='divleft']//ul//li//a//div//p[text()='"+SubM+"']/parent::div/parent::a")).click();
 				Thread.sleep(3000);
 				
@@ -97,6 +98,8 @@ public class I_HomePage
 					Thread.sleep(3000);
 				}
 			}
+		
+			
 	}
 	
 	public boolean left()
@@ -113,11 +116,4 @@ public class I_HomePage
 		
 	}
 	
-	public void SubModule_Link()
-	{
-		WebDriverWait wait4 = new WebDriverWait(driver,30);
-			wait4.until(ExpectedConditions.invisibilityOfElementLocated(By.id("grd_loading_Image")));
-			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-	}
-
 }
