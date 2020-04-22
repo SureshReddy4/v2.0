@@ -61,7 +61,7 @@ public class I_HomePage
 	
 	public void SubModuleClick(String SubM) throws InterruptedException
 	{
-		try
+			try
 			{
 				WebDriverWait wait3 = new WebDriverWait(driver,30);
 				wait3.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='divleft']//ul//li//a//div//p[text()='"+SubM+"']/parent::div/parent::a")));
@@ -96,8 +96,28 @@ public class I_HomePage
 					driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 					Thread.sleep(3000);
 				}
-				
 			}
+	}
+	
+	public boolean left()
+	{
+		try
+		{
+			driver.findElement(By.id("dashboardtabs")).isDisplayed();
+			return true;
 		}
+		catch(Exception e)
+		{
+			return false;
+		}
+		
+	}
+	
+	public void SubModule_Link()
+	{
+		WebDriverWait wait4 = new WebDriverWait(driver,30);
+			wait4.until(ExpectedConditions.invisibilityOfElementLocated(By.id("grd_loading_Image")));
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	}
 
 }

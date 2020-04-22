@@ -35,8 +35,8 @@ public class MainModule {
 		
 		stmt.execute(query2);
 
-//		String query3 = "Select Title from #MainModule_List Where URL IS NOT NULL and Parent = 0 and Title In ('HR') Drop Table #MainModule_List";
-		String query3 = "Select Title from #MainModule_List Where Parent=0 and Url is not null Drop Table #MainModule_List";
+		String query3 = "Select Title from #MainModule_List Where URL IS NOT NULL and Parent = 0 and Title In ('Dashboard','Products') Drop Table #MainModule_List";
+//		String query3 = "Select Title from #MainModule_List Where Parent=0 and Url is not null Drop Table #MainModule_List";
 		
 		stmt.execute(query3);
 		
