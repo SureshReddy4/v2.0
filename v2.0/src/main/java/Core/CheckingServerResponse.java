@@ -21,7 +21,7 @@ public class CheckingServerResponse {
 	public static void main(String[] args) throws IOException {
 		
 		System.out.println(CheckingServerResponse.HTTPLinkstatusChecker("http://192.168.1.98:9020/QC/WorkingStandards?id=3122&tabId=0"));
-		
+		System.out.println("Testing");
 	}
 
 	}
